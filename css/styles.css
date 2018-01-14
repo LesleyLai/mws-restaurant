@@ -41,7 +41,14 @@ h1, h2, h3, h4, h5, h6 {
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
+main {
+    padding-bottom: 6rem;
+}
 
+/*
+ * Credit: "Always on the bottom" Footer By Chris Bracco
+ * see: https://codepen.io/cbracco/pen/zekgx
+ */
 #footer {
     background-color: #444;
     color: #aaa;
@@ -174,12 +181,14 @@ nav h1 a {
     text-align: center;
     padding: 15px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 #restaurants-list li {
     background-color: #fff;
     border: 2px solid #ccc;
     font-family: Arial,sans-serif;
-    margin: 15px auto 15px auto;
+    margin: 7px auto 15px auto;
     min-height: 380px;
     padding: 0 30px 25px;
     text-align: left;
@@ -218,6 +227,40 @@ nav h1 a {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+@media (max-width: 369px) {
+    #restaurants-list li {
+        padding: 0 calc(100% - 310px) 25px;
+        width: 100%;
+    }
+
+    #restaurants-list li .restaurant-img {
+        margin-left: 15px;
+    }
+
+    #restaurants-list li h1 {
+        margin-left: 15px;
+    }
+
+    #restaurants-list li p {
+        margin-left: 15px;
+    }
+
+    #restaurants-list li a {
+        margin-left: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #restaurants-list li {
+        width: 25%;
+    }
+}
+@media (min-width: 700px) and (max-width: 1199px) {
+    #restaurants-list li {
+        width: 40%;
+    }
 }
 
 /* ====================== Restaurant Details ====================== */

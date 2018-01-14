@@ -20,6 +20,7 @@ fetchNeighborhoods = () => {
     if (error) { // Got an error
       console.error(error);
     } else {
+      console.log("Hello");
       self.neighborhoods = neighborhoods;
       fillNeighborhoodsHTML();
     }
@@ -77,8 +78,8 @@ window.initMap = () => {
   };
   self.map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
-    center: loc,
-    scrollwheel: false
+    center: loc
+    //scrollwheel: false
   });
   updateRestaurants();
 }
